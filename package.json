@@ -1,19 +1,21 @@
 {
-  "name": "ethereum-blockies",
+  "name": "better-ethereum-blockies",
+  "private": "false",
   "version": "0.1.1",
-  "description": "A tiny library for generating blocky identicons.",
+  "description": "A modern ethereum blocky generator library",
   "main": "blockies.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexvandesande/blockies.git"
+    "url": "git+https://github.com/rdig/better-ethereum-blockies.git"
   },
-  "author": "Erin Dachtler, Alex Van de Sande",
+  "contributors": [
+    "Erin Dachtler",
+    "Alex Van de Sande",
+    "Raul Glogovetan <raul@glogovetan.com>",
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alexvandesande/blockies/issues"
+    "url": "https://github.com/rdig/better-ethereum-blockies/issues"
   },
-  "homepage": "https://github.com/alexvandesande/blockies#readme"
+  "homepage": "https://github.com/rdig/better-ethereum-blockies#readme"
 }
