@@ -5,3 +5,7 @@ This is modern fork of the original [ethereum-blockies](https://github.com/ether
 ## Under construction
 
 This project is in `maintenance` mode as it's being re-vamped. Stay tuned.
+
+## License
+
+This project has been re-licensed to the [MIT License](./LICENSE) from the previous [WTFPL License](http://www.wtfpl.net/).
