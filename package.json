@@ -3,7 +3,12 @@
   "private": "false",
   "version": "0.1.1",
   "description": "A modern ethereum blocky generator library",
-  "main": "blockies.js",
+  "main": "lib/index.js",
+  "module": "lib/es/index.js",
+  "browser": "lib/umd/index.js",
+  "scripts": {
+    "build:es": "BABEL_ENV=es babel --out-dir lib/es src"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rdig/better-ethereum-blockies.git"
@@ -11,11 +16,23 @@
   "contributors": [
     "Erin Dachtler",
     "Alex Van de Sande",
-    "Raul Glogovetan <raul@glogovetan.com>",
+    "Raul Glogovetan <raul@glogovetan.com>"
   ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rdig/better-ethereum-blockies/issues"
   },
-  "homepage": "https://github.com/rdig/better-ethereum-blockies#readme"
+  "homepage": "https://github.com/rdig/better-ethereum-blockies#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.1",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-dynamic-import": "^1.0.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.3.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0"
+  }
 }
