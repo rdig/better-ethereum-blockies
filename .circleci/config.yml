@@ -3,7 +3,7 @@ version: 2.0
 jobs:
   build:
     docker:
-      - image: circleci/node:8.10.0
+      - image: circleci/node:8.9.4
     parallelism: 1
     working_directory: ~/better-ethereum-blockies
     steps:
