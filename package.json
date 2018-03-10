@@ -8,9 +8,11 @@
   "browser": "lib/umd/index.js",
   "scripts": {
     "cleanup": "rm -rf lib",
+    "build": "yarn cleanup && yarn build:es && yarn build:cjs",
     "build:es": "BABEL_ENV=es babel --out-dir lib/es src",
     "build:cjs": "BABEL_ENV=cjs babel --out-dir lib src",
-    "build:dev": "NODE_ENV=development yarn run cleanup && yarn run build:es && yarn run build:cjs"
+    "build:dev": "NODE_ENV=development yarn build",
+    "build:ci": "NODE_ENV=test yarn build"
   },
   "repository": {
     "type": "git",

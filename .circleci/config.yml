@@ -1,0 +1,39 @@
+version: 2.0
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.10.0
+    parallelism: 1
+    working_directory: ~/better-ethereum-blockies
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node-modules-{{ checksum "package.json" }}
+          - node-modules-
+      - run:
+          name: "Installing modules"
+          command: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: node-modules-{{ checksum "package.json" }}
+      - run:
+          name: "Building library"
+          command: yarn build:ci
+
+workflows:
+  version: 2
+  triggered-by-commit:
+    jobs:
+      - build
+  nightly-build:
+    triggers:
+      - schedule:
+          cron: "0 4 * * *"
+          filters:
+            branches:
+              only: master
+    jobs:
+      - build
