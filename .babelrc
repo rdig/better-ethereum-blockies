@@ -1,5 +1,5 @@
 {
-  "presets": ["env", "flow"],
+  "presets": ["flow"],
   "plugins": [
     ["transform-runtime", { "polyfill": false, "regenerator": true }],
     ["transform-inline-environment-variables", {
@@ -15,8 +15,12 @@
   "env": {
     "es": {
       "presets": [
-        ["env", { "modules": false }],
-        "flow",
+        ["env", { "modules": false, "debug": false }],
+      ],
+    },
+    "cjs": {
+      "presets": [
+        ["env", { "modules": "commonjs", "debug": false }],
       ],
     },
     "test": {

@@ -7,7 +7,10 @@
   "module": "lib/es/index.js",
   "browser": "lib/umd/index.js",
   "scripts": {
-    "build:es": "BABEL_ENV=es babel --out-dir lib/es src"
+    "cleanup": "rm -rf lib",
+    "build:es": "BABEL_ENV=es babel --out-dir lib/es src",
+    "build:cjs": "BABEL_ENV=cjs babel --out-dir lib src",
+    "build:dev": "NODE_ENV=development yarn run cleanup && yarn run build:es && yarn run build:cjs"
   },
   "repository": {
     "type": "git",
