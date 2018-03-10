@@ -8,9 +8,11 @@
   "browser": "lib/umd/index.js",
   "scripts": {
     "cleanup": "rm -rf lib",
-    "build": "yarn cleanup && yarn build:es && yarn build:cjs",
+    "build": "yarn cleanup && yarn build:es && yarn build:cjs && yarn build:umd && yarn build:umd:min",
     "build:es": "BABEL_ENV=es babel --out-dir lib/es src",
     "build:cjs": "BABEL_ENV=cjs babel --out-dir lib src",
+    "build:umd": "webpack-cli",
+    "build:umd:min": "webpack-cli --optimize-minimize",
     "build:dev": "NODE_ENV=development yarn build",
     "build:ci": "NODE_ENV=test yarn build"
   },
@@ -38,6 +40,8 @@
     "babel-plugin-transform-inline-environment-variables": "^0.3.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-flow": "^6.23.0"
+    "babel-preset-flow": "^6.23.0",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11"
   }
 }
