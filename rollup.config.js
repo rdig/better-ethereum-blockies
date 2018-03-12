@@ -2,7 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
-import { browser, browserMinified } from './package.json';
+import { browser, browserMinified, main, module } from './package.json';
 
 const rollupConfig = [
   {
@@ -41,6 +41,27 @@ if (process.env.NODE_ENV === 'production') {
       })
     ]
   });
+}
+
+if (process.env.ROLLUP_WATCH) {
+  rollupConfig.push(  {
+    	input: 'src/index.js',
+      output: [
+        {
+          file: main,
+          format: 'cjs',
+        },
+        {
+          file: module,
+          format: 'es',
+        }
+      ],
+    	plugins: [
+    		babel({
+    			exclude: ['node_modules/**']
+    		})
+    	]
+    });
 }
 
 export default rollupConfig;

@@ -15,7 +15,8 @@
     "build:umd": "BABEL_ENV=umd rollup -c",
     "build:prod": "NODE_ENV=production yarn build",
     "build:dev": "NODE_ENV=development yarn build",
-    "build:ci": "NODE_ENV=test yarn build"
+    "build:ci": "NODE_ENV=test yarn build",
+    "watch": "BABEL_ENV=umd yarn cleanup && rollup -c -w"
   },
   "repository": {
     "type": "git",
