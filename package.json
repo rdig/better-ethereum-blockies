@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/rdig/better-ethereum-blockies/issues"
   },
-  "homepage": "https://github.com/rdig/better-ethereum-blockies#readme",
+  "homepage": "https://github.com/rdig/better-ethereum-blockies",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
