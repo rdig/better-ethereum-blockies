@@ -6,13 +6,14 @@
   "main": "lib/index.js",
   "module": "lib/es/index.js",
   "browser": "lib/umd/index.js",
+  "browserMinified": "lib/umd/index.min.js",
   "scripts": {
     "cleanup": "rm -rf lib",
-    "build": "yarn cleanup && yarn build:es && yarn build:cjs && yarn build:umd && yarn build:umd:min",
-    "build:es": "BABEL_ENV=es babel --out-dir lib/es src",
-    "build:cjs": "BABEL_ENV=cjs babel --out-dir lib src",
-    "build:umd": "webpack-cli",
-    "build:umd:min": "webpack-cli --optimize-minimize",
+    "build": "yarn cleanup && yarn build:cjs && yarn build:es && yarn build:umd",
+    "build:cjs": "BABEL_ENV=cjs babel src/ --out-dir lib/",
+    "build:es": "BABEL_ENV=es babel src/ --out-dir lib/es",
+    "build:umd": "BABEL_ENV=umd rollup -c",
+    "build:prod": "NODE_ENV=production yarn build",
     "build:dev": "NODE_ENV=development yarn build",
     "build:ci": "NODE_ENV=test yarn build"
   },
@@ -33,15 +34,16 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-jest": "^22.4.1",
-    "babel-loader": "^7.1.4",
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-transform-inline-environment-variables": "^0.3.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.11"
+    "plugin": "^0.3.3",
+    "rollup": "^0.56.5",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.2.0",
+    "rollup-plugin-uglify": "^3.0.0"
   }
 }

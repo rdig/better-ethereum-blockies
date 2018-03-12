@@ -1,5 +1,7 @@
 {
-  "presets": ["flow"],
+  "presets": [
+    "flow"
+  ],
   "plugins": [
     ["transform-runtime", { "polyfill": false, "regenerator": true }],
     ["transform-inline-environment-variables", {
@@ -13,14 +15,19 @@
     "__mocks__"
   ],
   "env": {
+    "cjs": {
+      "presets": [
+        ["env", { "debug": false }],
+      ],
+    },
     "es": {
       "presets": [
         ["env", { "modules": false, "debug": false }],
       ],
     },
-    "cjs": {
+    "umd": {
       "presets": [
-        ["env", { "modules": "commonjs", "debug": false }],
+        ["env", { "modules": false, "debug": false }],
       ],
     },
     "test": {

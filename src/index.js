@@ -1,4 +1,4 @@
-export const add = (first, second) => first + second;
+import { add } from './add';
 
 export default {
   add,
