@@ -1,4 +1,6 @@
-export const add = (first, second) => first + second;
+/* @flow */
+
+export const add = (first: number, second: number): number => first + second;
 
 export default {
   add,

@@ -11,8 +11,7 @@
     }]
   ],
   "ignore": [
-    "__tests__",
-    "__mocks__"
+    "__tests__"
   ],
   "env": {
     "cjs": {

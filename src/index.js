@@ -1,5 +1,11 @@
+/* @flow */
+
 import { add } from './add';
 
-export default {
+import type { LibraryExport } from './flowtypes';
+
+const betterEthereumBlockies: LibraryExport = {
   add,
 };
+
+export default betterEthereumBlockies;
