@@ -2,6 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
+import flow from 'rollup-plugin-flow';
 import { browser, browserMinified, main, module } from './package.json';
 
 const rollupConfig = [
@@ -14,6 +15,7 @@ const rollupConfig = [
       exports: 'default',
     },
   	plugins: [
+      flow({ pretty: true }),
   		resolve(),
   		commonjs(),
   		babel({
@@ -33,6 +35,7 @@ if (process.env.NODE_ENV === 'production') {
       exports: 'default',
     },
     plugins: [
+      flow({ pretty: true }),
       resolve(),
       commonjs(),
       uglify(),
