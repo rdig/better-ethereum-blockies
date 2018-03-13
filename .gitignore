@@ -65,5 +65,6 @@ package-lock.json
 # Build folder
 lib
 
-# CI JUnit Reporst
+# CI JUnit Reports
 reports
+junit.xml

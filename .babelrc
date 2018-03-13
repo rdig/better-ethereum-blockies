@@ -30,6 +30,9 @@
       ],
     },
     "test": {
+      "presets": [
+        ["env", { "debug": false }],
+      ],
       "plugins": ["dynamic-import-node"],
       "ignore": null
     }

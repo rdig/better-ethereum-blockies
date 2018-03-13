@@ -28,15 +28,24 @@ jobs:
           name: "Linting code"
           command: yarn lint:ci
       - run:
+          name: "Running unit tests"
+          command: yarn test:ci
+          environment:
+            JEST_JUNIT_OUTPUT: "reports/jest/jest-results.xml"
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: reports
+      - run:
           name: "Building library"
           command: yarn build:ci
 
 workflows:
   version: 2
-  triggered-by-commit:
+  commit:
     jobs:
       - build
-  nightly-build:
+  nightly:
     triggers:
       - schedule:
           cron: "0 4 * * *"
