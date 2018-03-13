@@ -1,11 +1,5 @@
 // @flow
 
-import { add } from './add';
+import legacyBlockies from './blockies';
 
-import type { LibraryExport } from './flowtypes';
-
-const betterEthereumBlockies: LibraryExport = {
-  add,
-};
-
-export default betterEthereumBlockies;
+export default legacyBlockies;
