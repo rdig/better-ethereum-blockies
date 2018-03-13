@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "eslint-config-airbnb-base",
+    "eslint-config-airbnb-base/rules/strict",
+    "prettier",
+    "prettier/flowtype"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+  },
+  "plugins": ["flowtype", "prettier"],
+  "rules": {
+    "eqeqeq": [2, "smart"],
+    "max-len": [2, { "code": 120, "ignoreComments": true }],
+    "no-underscore-dangle": [2, { "allowAfterThis": true }],
+    "no-console": [0],
+    "prettier/prettier": [
+      "error",
+      {
+        "parser": "flow",
+        "singleQuote": true,
+        "trailingComma": 'all'
+      }
+    ]
+  }
+}
