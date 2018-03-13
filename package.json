@@ -1,7 +1,7 @@
 {
   "name": "better-ethereum-blockies",
-  "private": "false",
-  "version": "0.1.1",
+  "private": "true",
+  "version": "0.1.2",
   "description": "A modern ethereum blocky generator library",
   "main": "lib/index.js",
   "module": "lib/es/index.js",
